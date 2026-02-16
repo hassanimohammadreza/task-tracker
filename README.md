@@ -9,8 +9,9 @@ This project demonstrates Blueprint architecture, JSON-based persistence, and Ji
 
 ---
 
-📸 Preview
-![App Screenshot](https://github.com/hassanimohammadreza/url-shortener/blob/3c5255b3404853f1785629346a01745fc2fa5df4/static/url-shortener.png?raw=true)
+## 📸 Preview
+
+![App Screenshot](https://github.com/hassanimohammadreza/simple-task-tracker/blob/main/static/task-tracker.png?raw=true)
 
 ---
 
