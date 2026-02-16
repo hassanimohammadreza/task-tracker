@@ -30,10 +30,8 @@ This project demonstrates Blueprint architecture, JSON-based persistence, and Ji
  ┣ 📂 templates
  ┃ ┣ 📜 base.html
  ┃ ┗ 📜 index.html
- ┣ 📂 venv
  ┣ 📜 run.py
- ┣ 📜 tasks.json
- ┗ 📜 README.md
+ ┗ 📜 tasks.json
 ```
 
 ---
