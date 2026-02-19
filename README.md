@@ -17,7 +17,7 @@ This project demonstrates Blueprint architecture, JSON-based persistence, and Ji
 
 ## 🏗 Project Architecture
 
-```text
+```graphql
 📦 project
  ┣ 📂 app
  ┃ ┣ 📜 __init__.py
