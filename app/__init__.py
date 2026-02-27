@@ -1,15 +1,28 @@
 from flask import Flask
-import os
+from .extensions import db, migrate, login_manager
+from config import DevelopmentConfig
+
 
 def create_app():
-    base_dir = os.path.dirname(os.path.dirname(__file__))
-    app = Flask(
-        __name__,
-        static_folder=os.path.join(base_dir, "static"),
-        template_folder=os.path.join(base_dir, "templates")
-    )
+    app = Flask(__name__)
+    app.config.from_object(DevelopmentConfig)
 
-    from app.routes import main
+    db.init_app(app)
+    migrate.init_app(app, db)
+    login_manager.init_app(app)
+
+    login_manager.login_view = "auth.login"
+
+    from .models import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+
+    from .auth import auth
+    from .main import main
+
+    app.register_blueprint(auth)
     app.register_blueprint(main)
 
     return app

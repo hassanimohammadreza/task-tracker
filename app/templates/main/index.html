@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ui.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+
+    <header class="header">
+        <h1 class="title">YOUR TASKS</h1>
+        <a href="{{ url_for('auth.logout') }}" class="btn logout-btn">Logout</a>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-wrapper">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('main.add_task') }}" class="add-task-form">
+        <input type="text" name="task" placeholder="Add a new task" class="input-task" required>
+        <button type="submit" class="btn add-btn">Add</button>
+    </form>
+
+    <div class="task-list">
+        {% for task in tasks %}
+        <div class="task-card {% if task.done %}done{% endif %}">
+            <div class="task-info">
+                <span class="task-name">{{ task.name }}</span>
+            </div>
+
+            <div class="task-actions">
+                <a href="{{ url_for('main.toggle_task', id=task.id) }}" class="btn toggle-btn">
+                    {% if task.done %}Undo{% else %}Done{% endif %}
+                </a>
+                <a href="{{ url_for('main.delete_task', id=task.id) }}" class="btn delete-btn">Delete</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No tasks yet!</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
