@@ -14,7 +14,10 @@ This project demonstrates production-style architecture including authentication
 
 ## 📸 Preview
 
-![App Screenshot](https://github.com/hassanimohammadreza/simple-task-tracker/blob/main/static/task-tracker.png)
+![App Screenshot](./images/task-tracker.png)
+
+![singup](./images/singup.png)
+
 
 ---
 
