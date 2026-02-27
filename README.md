@@ -59,13 +59,11 @@ project/
 ## 🔹 Modular Blueprint Structure
 
 The application is organized using Flask Blueprints to separate:
-
 - Authentication logic
 - Core task management
 - UI rendering
 
 This enables:
-
 - Clean separation of concerns  
 - Maintainability  
 - Scalability  
@@ -76,13 +74,11 @@ This enables:
 ## 🔹 PostgreSQL Database Persistence
 
 The application uses:
-
 - PostgreSQL  
 - SQLAlchemy ORM  
 - Relational data modeling  
 
 Example model:
-
 ```python
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -110,7 +106,6 @@ Each user only accesses their own tasks, making this app multi-user and SaaS-rea
 
 ## 🎨 Modern 2026 UI/UX
 The frontend features:
-
 - Card-based layout
 - Dark modern dashboard
 - Smooth micro-interactions
@@ -138,7 +133,6 @@ Inspired by modern productivity tools such as Notion, Linear, and Todoist.
 ## 🛠 Tech Stack
 
 Backend:
-
 - Python 3.11
 - Flask
 - SQLAlchemy
@@ -146,13 +140,11 @@ Backend:
 - PostgreSQL
 
 Frontend:
-
 - HTML5
 - CSS3
 - Vanilla JavaScript
 
 Infrastructure:
-
 - Docker
 - Docker Compose
 
@@ -182,10 +174,7 @@ This project demonstrates:
 
 ### 🚀 Why This Project Matters
 
-#### This is no longer a beginner todo app.
-
 It is a foundation for:
-
 - SaaS product development
 - Startup MVP
 - Multi-user web applications
