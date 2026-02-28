@@ -4,15 +4,33 @@
     box-sizing: border-box;
 }
 
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: #0f172a;
-    color: #f1f5f9;
     min-height: 100vh;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #f8fafc;
+
+    /* Warm modern gradient background */
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 94, 98, 0.25), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(255, 153, 102, 0.25), transparent 40%),
+        linear-gradient(135deg, #0f0c29, #1c1a3a, #0f0c29);
+
+    background-attachment: fixed;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .app {
